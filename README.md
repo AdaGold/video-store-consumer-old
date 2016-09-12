@@ -13,6 +13,24 @@ __Movie Posters:__ The Alternate Project API contains a directory of [movie post
 - All movie data presented to the user must be sourced from the provided Node/Express API via AJAX
 - Create this as a _Single Page Application_; no unnecessary page reloads or redirections
 
+### Project Setup
+- Fork and clone this repository
+- After entering the project directory, install dependencies: `$ npm install`
+- Start the development server: `$ npm start`
+
+### Project Baseline
+- If you are using your Video Store API, you will need to alter it to allow for cross-origin AJAX Requests via [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
+- Add this block of code __to your API's__ `/app.js` and then restart the API server:
+
+  ```javascript
+  // enable CORS
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*")
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+    next()
+  })
+  ```
+
 ### Primary View
 - Show a paginated collection of Movies, __10 per page__
 - Allow a user to interact/select a Movie via click, touch, or some other event
